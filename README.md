@@ -12,12 +12,12 @@ For best results you should use [remark-html](https://www.npmjs.com/package/rema
 
 ## Usage
 
-Get the plugin using `import` or `require` based on what makes sense for your project. Then pass the plugin into remark.
+Import the plugin and then pass it into remark or your unified processor chain.
 
 ```js
 import remark from 'remark';
-import html from 'remark-html'
-import underline from 'remark-underline`;
+import html from 'remark-html';
+import underline from 'remark-underline';
 
 remark.use(html).use(underline).process("__hello world__");
 ```
@@ -40,7 +40,7 @@ Without the plugin the output will be
 You may supply an optional options object to configure the plugin. These are the options currently supported.
 
 - `marker` - The token used to identify unerlined text. By default this is '__'.
-- `nodeType` - The name of the node to create. By default this is 'unerline'.
+- `nodeType` - The name of the node to create. By default this is 'underline'.
 - `tagType` - The name of the HTML tag to wrap the text in. The default is 'ins' however this may not always be appropriate.
 - `classNames` - An array of class names to use for the HTML tag. By default this is just 'underline'. Passing an empty array will disable this.
 
