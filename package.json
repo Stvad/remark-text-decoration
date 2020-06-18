@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Darkhax/remark-underline/issues"
   },
-  "homepage": "https://github.com/Darkhax/remark-underline#readme"
+  "homepage": "https://github.com/Darkhax/remark-underline#readme",
+  "peerDependencies": {
+    "remark": "12.x"
+  }
 }
