@@ -1,5 +1,7 @@
 # remark-underline
 
+[![npm version](https://badge.fury.io/js/remark-underline.svg)](https://badge.fury.io/js/remark-underline)
+
 A [remark](https://github.com/remarkjs/remark) plugin that adds support for underlining. By default this is done by repurposing `__` from the bold formatter. Bold also supports `**` so repurposing `__` is a popular choice for underlining text.
 
 ## Installation
