@@ -39,10 +39,10 @@ Without the plugin the output will be
 ## Options
 You may supply an optional options object to configure the plugin. These are the options currently supported.
 
-- 'marker' - The token used to identify unerlined text. By default this is '__'.
-- 'nodeType' - The name of the node to create. By default this is 'unerline'.
-- 'tagType' - The name of the HTML tag to wrap the text in. The default is 'ins' however this may not always be appropriate.
-- 'classNames' - An array of class names to use for the HTML tag. By default this is just 'underline'. Passing an empty array will disable this.
+- `marker` - The token used to identify unerlined text. By default this is '__'.
+- `nodeType` - The name of the node to create. By default this is 'unerline'.
+- `tagType` - The name of the HTML tag to wrap the text in. The default is 'ins' however this may not always be appropriate.
+- `classNames` - An array of class names to use for the HTML tag. By default this is just 'underline'. Passing an empty array will disable this.
 
 **Example**
 ```js
