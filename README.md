@@ -1,6 +1,6 @@
 # remark-underline
 
-A [remark](https://github.com/remarkjs/remark) plugin that repurposes the `__` format for undelining text. Under normal Markdown you can use both `__` and `**` but there is no format for underlining text. This plugin changes that by repurposing `__` to underline and leaving `**` untouched.
+A [remark](https://github.com/remarkjs/remark) plugin that repurposes the `__` token for underlining text. With traditional Markdown both `__` and `**` are used for bolding text while there is no support for underlined text. This plugin repurposes `__` for underlining but leaves `**` untouched.
 
 ## Installation
 
@@ -8,7 +8,7 @@ A [remark](https://github.com/remarkjs/remark) plugin that repurposes the `__` f
 npm install remark-underline
 ```
 
-For best results you should also use [remark-html]().
+For best results you should use [remark-html](https://www.npmjs.com/package/remark-html) or similar.
 
 ## Usage
 
