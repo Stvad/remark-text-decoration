@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "A remark plugin which adds underline support by repurposing the \"__\" token.",
   "main": "index.js",
+  "scripts": {
+    "build": "microbundle build --no-compress"
+  },
+  "main": "dist/remark-underline.js",
+  "umd:main": "dist/remark-underline.umd.js",
+  "module": "dist/remark-underline.mjs",
+  "source": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darkhax/remark-underline.git"
