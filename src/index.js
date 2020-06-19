@@ -1,5 +1,6 @@
 export default function attacher(options) {
 
+    options = options ?? {}; // Prevents options from being null
     const Parser = this.Parser.prototype;
 
     const nodeType = options.nodeType ?? 'underline';
