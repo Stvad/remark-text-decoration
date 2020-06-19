@@ -9,7 +9,7 @@
   "main": "dist/remark-underline.js",
   "umd:main": "dist/remark-underline.umd.js",
   "module": "dist/remark-underline.mjs",
-  "source": "index.js",
+  "source": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darkhax/remark-underline.git"
