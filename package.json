@@ -31,5 +31,6 @@
   },
   "devDependencies": {
     "microbundle": "^0.12.3"
-  }
+  },
+  "funding": "https://www.patreon.com/Darkhax"
 }
