@@ -12,7 +12,7 @@ export default function attacher(options) {
 
         if (value.startsWith(marker)) {
 
-            const end = value.indexOf(marker, 2);
+            const end = value.indexOf(marker, marker.length);
 
             if (end > -1) {
 
@@ -21,7 +21,7 @@ export default function attacher(options) {
                     return true;
                 }
 
-                const text = value.substring(2, end);
+                const text = value.substring(marker.length, end);
 
                 const now = eat.now();
                 now.column += marker.length;
