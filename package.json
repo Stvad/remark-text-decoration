@@ -1,36 +1,41 @@
 {
-  "name": "remark-underline",
-  "version": "1.0.4",
-  "description": "A remark plugin which adds underline support by repurposing the \"__\" token.",
-  "main": "dist/remark-underline.js",
+  "name": "remark-text-decoration",
+  "version": "1.1.0",
+  "description": "A remark plugin which allows you to add arbitrary decoration to text (like underline, highlighting, etc).",
+  "main": "dist/remark-text-decoration.js",
   "scripts": {
     "build": "microbundle build --no-compress"
   },
-  "umd:main": "dist/remark-underline.umd.js",
-  "module": "dist/remark-underline.mjs",
+  "umd:main": "dist/remark-text-decoration.umd.js",
+  "module": "dist/remark-text-decoration.mjs",
   "source": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Darkhax/remark-underline.git"
+    "url": "git+https://github.com/Stvad/remark-text-decoration.git"
   },
   "keywords": [
     "remark",
     "markdown",
     "underline",
-    "underscore",
+    "decoration",
+    "text",
+    "highlight",
     "plugin"
   ],
-  "author": "Tyler Hancock (Darkhax)",
+  "author": "Vladyslav Sitalo",
+  "contributors": [
+    "Tyler Hancock (Darkhax)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Darkhax/remark-underline/issues"
+    "url": "https://github.com/Stvad/remark-text-decoration/issues"
   },
-  "homepage": "https://github.com/Darkhax/remark-underline#readme",
+  "homepage": "https://github.com/Stvad/remark-text-decoration#readme",
   "peerDependencies": {
     "remark": "12.x"
   },
   "devDependencies": {
     "microbundle": "^0.12.3"
   },
-  "funding": "https://www.patreon.com/Darkhax"
+  "funding": "https://www.patreon.com/stvad"
 }

@@ -1,45 +1,41 @@
-export default function attacher(options) {
+/** This done as function returning function mainly to workaround deduplication
+ * logic in plugin pipeline processor preventing you from having two instances
+ * of a plugin.
+ */
+export default (marker, tagType, classNames = [], nodeType = "decoration") => {
+  if (!marker || !tagType) throw "You must specify both marker and tag"
 
-    options = options ?? {}; // Prevents options from being null
-    const Parser = this.Parser.prototype;
+  return function() {
+    const Parser = this.Parser.prototype
+    Parser.inlineTokenizers[nodeType] = function underlineTokenizer(eat, value, silent) {
+      if (value.startsWith(marker)) {
+        const end = value.indexOf(marker, marker.length)
 
-    const nodeType = options.nodeType ?? 'underline';
-    const marker = options.marker ?? '__';
-    const classNames = options.classNames ?? ["underline"];
-    const tagType = options.tagType ?? 'ins';
+        if (end > -1) {
+          if (silent) {
+            return true
+          }
 
-    Parser.inlineTokenizers.underline = function underlineTokenizer(eat, value, silent) {
+          const text = value.substring(marker.length, end)
 
-        if (value.startsWith(marker)) {
+          const now = eat.now()
+          now.column += marker.length
+          now.offset += marker.length
 
-            const end = value.indexOf(marker, marker.length);
-
-            if (end > -1) {
-
-                if (silent) {
-
-                    return true;
-                }
-
-                const text = value.substring(marker.length, end);
-
-                const now = eat.now();
-                now.column += marker.length;
-                now.offset += marker.length;
-
-                return eat(marker + text + marker)({
-                    type: nodeType,
-                    children: this.tokenizeInline(text, now),
-                    data: {
-                        hName: tagType,
-                        hProperties: classNames.length ? { className: classNames } : {}
-                    }
-                });
+          return eat(marker + text + marker)({
+            type: nodeType,
+            children: this.tokenizeInline(text, now),
+            data: {
+              hName: tagType,
+              hProperties: classNames.length ? { className: classNames } : {}
             }
+          })
         }
+      }
 
-        return false;
-    };
-    Parser.inlineTokenizers.underline.locator = (value, fromIndex) => value.indexOf(marker, fromIndex);
-    Parser.inlineMethods.splice(Parser.inlineMethods.indexOf('strong'), 0, 'underline');
-};
+      return false
+    }
+    Parser.inlineTokenizers[nodeType].locator = (value, fromIndex) => value.indexOf(marker, fromIndex)
+    Parser.inlineMethods.splice(Parser.inlineMethods.indexOf("strong"), 0, nodeType)
+  }
+}
